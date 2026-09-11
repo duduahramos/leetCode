@@ -8,6 +8,8 @@ public class Main {
         // 2
         var lista1 = new ListNode(2, new ListNode(4, new ListNode(3)));
         var lista2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+//        var lista1 = new ListNode(9);
+//        var lista2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))))));
 
         var result = AddTwoNumbers_2.addTwoNumbers(lista1, lista2);
 
