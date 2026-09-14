@@ -2,11 +2,10 @@ package problems;
 
 import problems.models.ListNode;
 
-import java.util.ArrayList;
 import java.util.List;
 
 //https://leetcode.com/problems/add-two-numbers/description/
-public class AddTwoNumbers_2 {
+public class Problem2 {
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode listaFinal = new ListNode(0); // essa lista(0) sera ignorada pois no final é retornado listaFinal.next
