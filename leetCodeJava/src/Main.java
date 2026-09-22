@@ -1,6 +1,6 @@
 import problems.Problem2;
+import problems.Problem4_IA;
 import problems.models.ListNode;
-import problems.Problem3;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -42,7 +42,12 @@ public class Main {
 //        valorStr = "mjvhmi";
 //        resultInt = Problem3.lengthOfLongestSubstring(valorStr);
 
-        valorStr = "eea";
-        resultInt = Problem3.lengthOfLongestSubstring(valorStr);
+//        valorStr = "eea";
+//        resultInt = Problem3.lengthOfLongestSubstring(valorStr);
+
+        // PROBLEM 4 ---------------------------------------------------------------------------------------------------
+        int[] array1 = {1, 3};
+        int[] array2 = {2};
+        var resultP4 = Problem4_IA.findMedianSortedArrays(array1, array2);
     }
 }
