@@ -1,8 +1,24 @@
 package problems;
 
-//https://leetcode.com/problems/longest-palindromic-substring/
-public class Problem5 {
-    public static String longestPalindrome(String s) {
-        return "";
+//https://leetcode.com/problems/palindrome-number/
+public class Problem9 {
+    public static boolean isPalindrome(int x) {
+        var valorStr = String.valueOf(x);
+        var valorInvertido = inverteString(valorStr);
+
+        return valorStr.equals(valorInvertido);
+    }
+
+    private static String inverteString(String valor) {
+        var valorInvertido = "";
+
+        int index = valor.length() - 1;
+
+        while (index >= 0) {
+            valorInvertido += valor.charAt(index);
+            index--;
+        }
+
+        return valorInvertido;
     }
 }

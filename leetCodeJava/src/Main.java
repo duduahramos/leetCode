@@ -1,27 +1,27 @@
-import problems.Problem2;
-import problems.Problem4_IA;
-import problems.models.ListNode;
+import problems.Problem9;
+import problems.Problema13;
+import problems.Problema14;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         // PROBLEM 2 ---------------------------------------------------------------------------------------------------
-        var lista1 = new ListNode(2, new ListNode(4, new ListNode(3)));
-        var lista2 = new ListNode(5, new ListNode(6, new ListNode(4)));
-
-        var resultadoLista = Problem2.addTwoNumbers(lista1, lista2);
-
-        lista1 = new ListNode(9);
-        lista2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))))));
-
-        resultadoLista = Problem2.addTwoNumbers(lista1, lista2);
-
-        System.out.println(resultadoLista);
+//        var lista1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+//        var lista2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+//
+//        var resultadoLista = Problem2.addTwoNumbers(lista1, lista2);
+//
+//        lista1 = new ListNode(9);
+//        lista2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))))));
+//
+//        resultadoLista = Problem2.addTwoNumbers(lista1, lista2);
+//
+//        System.out.println(resultadoLista);
 
         // PROBLEM 3 ---------------------------------------------------------------------------------------------------
-        String valorStr = null;
-        int resultInt = 0;
+//        String valorStr = null;
+//        int resultInt = 0;
 
 
 //        valorStr = "abcabcbb";
@@ -46,8 +46,26 @@ public class Main {
 //        resultInt = Problem3.lengthOfLongestSubstring(valorStr);
 
         // PROBLEM 4 ---------------------------------------------------------------------------------------------------
-        int[] array1 = {1, 3};
-        int[] array2 = {2};
-        var resultP4 = Problem4_IA.findMedianSortedArrays(array1, array2);
+//        int[] array1 = {1, 3};
+//        int[] array2 = {2};
+//        var resultP4 = Problem4_IA.findMedianSortedArrays(array1, array2);
+
+        // PROBLEM 9 ---------------------------------------------------------------------------------------------------
+//        int valorInt = 121;
+//        var result = Problem9.isPalindrome(valorInt);
+//
+//        valorInt = -121;
+//        result = Problem9.isPalindrome(valorInt);
+
+        // PROBLEM 13 ---------------------------------------------------------------------------------------------------
+//        String valorStr = "MCMXCIV";
+//        var result = Problema13.romanToInt(valorStr);
+
+        // PROBLEM 14 ---------------------------------------------------------------------------------------------------
+        String[] strs = {"ab", "a"};
+        var result14 = Problema14.longestCommonPrefix(strs);
+
+        // ---------------------------------------------------- FIM ----------------------------------------------------
+        System.out.println("FIM");
     }
 }
