@@ -1,47 +1,34 @@
 package problems;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 //https://leetcode.com/problems/longest-common-prefix/
 public class Problema14 {
     public static String longestCommonPrefix(String[] strs) {
         var prefixoComum = "";
 
-        if (strs.length == 1)
-            return strs[0];
-        var index1 = 0;
-        while (index1 < strs.length) {
-            var palavra1 = strs[index1];
-            var corteFinal1 = palavra1.length() - 1;
+        var tabelaPalavras = new ArrayList<List<String>>();
 
-            while (corteFinal1 > 0) {
-                var prefixo1 = palavra1.substring(0, corteFinal1);
+        for (var i = 0; i < strs.length; i++) {
+            tabelaPalavras.add(new ArrayList<>());
 
-                var index2 = 0;
-                while (index2 < strs.length) {
-                    var palavra2 = strs[index2];
-                    var corteFinal2 = palavra2.length() - 1;
+            var palavra = strs[i];
+            var letras = palavra.split("");
 
-                    if (index1 != index2) {
-                        while (corteFinal2 > 0) {
-                            var prefixo2 = palavra2.substring(0, corteFinal2);
+            for (String letra : letras) {
+                tabelaPalavras.get(i).add(letra);
+            }
+        }
 
-                            if (prefixo1.equals(prefixo2) && prefixo1.length() > prefixoComum.length()) {
-                                prefixoComum = prefixo1;
-                            }
+        var colunaFinal = 0;
+        while (true) {
+            var 
 
-                            corteFinal2--;
-                        }
-                    }
+            for (var palavra : tabelaPalavras) {
 
-                    index2++;
-                }
-
-                corteFinal1--;
             }
 
-            index1++;
+            colunaFinal++;
         }
 
         return prefixoComum;
