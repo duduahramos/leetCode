@@ -1,5 +1,6 @@
 package problems;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 //https://leetcode.com/problems/longest-common-prefix/
@@ -9,38 +10,38 @@ public class Problema14 {
 
         if (strs.length == 1)
             return strs[0];
-
-        for (var index1 = 0; index1 < strs.length; index1++) {
+        var index1 = 0;
+        while (index1 < strs.length) {
             var palavra1 = strs[index1];
+            var corteFinal1 = palavra1.length() - 1;
 
-            var index2 = 0;
-
-            var corteFinal1 = 1;
-            while (corteFinal1 < palavra1.length() && index2 < strs.length) {
-                var palavra2 = strs[index2];
-
-                if (palavra2.equalsIgnoreCase(palavra1)) {
-                    index2++;
-                    continue;
-                }
-
+            while (corteFinal1 > 0) {
                 var prefixo1 = palavra1.substring(0, corteFinal1);
 
-                var corteFinal2 = 1;
-                while (corteFinal2 < palavra2.length()) {
-                    var prefixo2 = palavra2.substring(0, corteFinal2);
+                var index2 = 0;
+                while (index2 < strs.length) {
+                    var palavra2 = strs[index2];
+                    var corteFinal2 = palavra2.length() - 1;
 
-                    if (prefixo1.equalsIgnoreCase(prefixo2) && prefixo1.length() > prefixoComum.length()) {
-                        prefixoComum = prefixo1;
+                    if (index1 != index2) {
+                        while (corteFinal2 > 0) {
+                            var prefixo2 = palavra2.substring(0, corteFinal2);
+
+                            if (prefixo1.equals(prefixo2) && prefixo1.length() > prefixoComum.length()) {
+                                prefixoComum = prefixo1;
+                            }
+
+                            corteFinal2--;
+                        }
                     }
 
-                    corteFinal2++;
+                    index2++;
                 }
 
-                index2++;
-                corteFinal1++;
+                corteFinal1--;
             }
 
+            index1++;
         }
 
         return prefixoComum;
