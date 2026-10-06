@@ -7,62 +7,37 @@ public class Problema14 {
     public static String longestCommonPrefix(String[] strs) {
         var prefixoComum = "";
 
-        var tabelaPalavras = new ArrayList<List<String>>();
+        if (strs.length == 1)
+            return strs[0];
 
-        for (var i = 0; i < strs.length; i++) {
-            tabelaPalavras.add(new ArrayList<>());
+        Arrays.sort(strs, Comparator.comparingInt(String::length));
 
-            var palavra = strs[i];
-            var letras = palavra.split("");
+        if (strs[0].length() == 0 || "".equalsIgnoreCase(strs[0]))
+            return prefixoComum;
 
-            for (String letra : letras) {
-                tabelaPalavras.get(i).add(letra);
-            }
-        }
+        var achou = false;
 
-        var colunaFinal = 0;
-        while (true) {
-            var 
+        var colunaFinal = strs[0].length() > 0 ? strs[0].length() : 1;
 
-            for (var palavra : tabelaPalavras) {
+        //IDEIA: CRIAR DICIONARIO COM PREFIXO E QTD DE VEZES QUE REPETE
 
-            }
+        while (colunaFinal >= 0 && !achou) {
+            var prefixo1 = strs[0].substring(0, colunaFinal);
 
-            colunaFinal++;
-        }
+            var colunaFinal2 = colunaFinal;
+            for (var i = 1; i < strs.length; i++) {
+                var prefixo2 = strs[i].substring(0, colunaFinal2);
 
-        return prefixoComum;
-    }
-
-    public static String longestCommonPrefix_OLD(String[] strs) {
-        int corteFinal = 0;
-        var prefixoComum = "";
-        int indexPalavra = 0;
-        var x = 0;
-
-        while (x < strs.length) {
-            var palavraAtual = strs[indexPalavra];
-
-            if (palavraAtual.length() <= 0)
-                return prefixoComum;
-
-            corteFinal = palavraAtual.length() - 1;
-            var prefixo = palavraAtual.substring(0, corteFinal);
-            var prefixo2 = strs[x].substring(0, corteFinal);
-
-            if (prefixo.equalsIgnoreCase(prefixo2)) {
-                prefixoComum = prefixo;
-            } else {
-                if ((corteFinal + 1) >= palavraAtual.length()) {
-                    indexPalavra++;
-                    corteFinal = 0;
-                } else {
-                    x = 0;
-                    corteFinal++;
+                if (!prefixo1.equals(prefixo2)) {
+                    colunaFinal2--;
+                    continue;
                 }
-            }
+                prefixoComum = prefixo1;
 
-            x++;
+                if (i == (strs.length - 1))
+                    achou = true;
+            }
+            colunaFinal--;
         }
 
         return prefixoComum;
