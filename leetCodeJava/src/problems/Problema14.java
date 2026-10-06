@@ -5,41 +5,48 @@ import java.util.*;
 //https://leetcode.com/problems/longest-common-prefix/
 public class Problema14 {
     public static String longestCommonPrefix(String[] strs) {
-        var prefixoComum = "";
+        var qtdPalavras = strs.length;
 
-        if (strs.length == 1)
+        if (qtdPalavras == 1)
             return strs[0];
 
-        Arrays.sort(strs, Comparator.comparingInt(String::length));
+        var prefixos = new HashMap<Integer, String>();
 
-        if (strs[0].length() == 0 || "".equalsIgnoreCase(strs[0]))
-            return prefixoComum;
+        var indexDeCorte = 0;
 
-        var achou = false;
+        var pararLoop = false;
 
-        var colunaFinal = strs[0].length() > 0 ? strs[0].length() : 1;
+        while (!pararLoop) {
+            String prefixo = null;
+            var qtdMatch = 0;
 
-        //IDEIA: CRIAR DICIONARIO COM PREFIXO E QTD DE VEZES QUE REPETE
+            for (var i = 0; i < qtdPalavras; i++) {
+                var palavraAtual = strs[i];
 
-        while (colunaFinal >= 0 && !achou) {
-            var prefixo1 = strs[0].substring(0, colunaFinal);
-
-            var colunaFinal2 = colunaFinal;
-            for (var i = 1; i < strs.length; i++) {
-                var prefixo2 = strs[i].substring(0, colunaFinal2);
-
-                if (!prefixo1.equals(prefixo2)) {
-                    colunaFinal2--;
-                    continue;
+                if (indexDeCorte > palavraAtual.length()) {
+                    pararLoop = true;
+                    break;
+                } else {
+                    if (prefixo == null)
+                        prefixo = palavraAtual.substring(0, indexDeCorte);
+                    if (prefixo.equalsIgnoreCase("")) {
+                        continue;
+                    }
                 }
-                prefixoComum = prefixo1;
 
-                if (i == (strs.length - 1))
-                    achou = true;
+                var prefixoAtual = palavraAtual.substring(0, indexDeCorte);
+
+                if (prefixo.equalsIgnoreCase(prefixoAtual))
+                    qtdMatch++;
             }
-            colunaFinal--;
+
+            prefixos.put(qtdMatch, prefixo);
+
+            indexDeCorte++;
         }
 
-        return prefixoComum;
+        var prefixoComum = prefixos.get(qtdPalavras);
+
+        return prefixoComum != null ? prefixoComum : "";
     }
 }

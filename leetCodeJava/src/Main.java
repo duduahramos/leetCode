@@ -62,7 +62,7 @@ public class Main {
 //        var result = Problema13.romanToInt(valorStr);
 
         // PROBLEM 14 ---------------------------------------------------------------------------------------------------
-        String[] strs = {"a","cac","bcba","b","ca"};
+        String[] strs = {"flower","flow","flight", ""};
         var result14 = Problema14.longestCommonPrefix(strs);
 
         // ---------------------------------------------------- FIM ----------------------------------------------------
