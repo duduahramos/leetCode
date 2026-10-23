@@ -1,6 +1,7 @@
 import problems.Problem9;
 import problems.Problema13;
 import problems.Problema14;
+import problems.Problema20;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -62,8 +63,12 @@ public class Main {
 //        var result = Problema13.romanToInt(valorStr);
 
         // PROBLEM 14 ---------------------------------------------------------------------------------------------------
-        String[] strs = {"flower","flow","flight", ""};
-        var result14 = Problema14.longestCommonPrefix(strs);
+//        String[] strs = {"flower","flow","flight", ""};
+//        var result14 = Problema14.longestCommonPrefix(strs);
+
+        // PROBLEM 20 ---------------------------------------------------------------------------------------------------
+        var valor = "()[]{}";
+        var result20 = Problema20.isValid(valor);
 
         // ---------------------------------------------------- FIM ----------------------------------------------------
         System.out.println("FIM");
