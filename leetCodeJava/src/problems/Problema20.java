@@ -1,20 +1,14 @@
 package problems;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 //https://leetcode.com/problems/valid-parentheses/
 public class Problema20 {
     // '()[]{}'
     // '([])'
-    private static final Map<String, Boolean> parenteses = Map.of(
-            "(", true,
-            "[", true,
-            "{", true,
-            ")", false,
-            "]", false,
-            "}", false
-    );
+    private static final List<String> parentesesAbre = List.of("(", "[", "{");
 
     private static final Map<String, String> parentesesFecha = Map.of(
             ")", "(",
@@ -31,7 +25,7 @@ public class Problema20 {
         for (var idx = 0; idx < s.length(); idx++) {
             var caractere = String.valueOf(s.charAt(idx));
 
-            if (parenteses.get(caractere)) {
+            if (parentesesAbre.contains(caractere)) {
                 pilhaAberta.add(caractere);
             } else {
                 if (pilhaAberta.isEmpty())
